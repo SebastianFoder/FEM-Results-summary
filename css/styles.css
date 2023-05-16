@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    font-family: 'Hanken Grotesk', sans-serif;
+
+    --border-radius: 2rem;
+
+    /*Primary*/
+
+    --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+
+    /*Gradients*/
+
+    /*Background*/
+    --Light-slate-blue: hsl(252, 100%, 67%);
+    --Light-royal-blue: hsl(241, 81%, 54%);
+
+    /*Circle*/
+    --Violet-blue: hsla(256, 72%, 46%, 1);
+    --Persian-blue: hsla(241, 72%, 46%, 0);
+
+    /*Neutral*/
+
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+}
+
+body{
+    overflow: hidden;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100svw;
+    height: 100svh;
+}
+
+p{
+    Font-size: 12px;
+}
+
+section.score{
+    width: calc(100% - var(--border-radius) * 2);
+    height: calc(45% - var(--border-radius) * 2);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    padding: var(--border-radius);
+    background: linear-gradient(var(--Light-slate-blue) 0%, var(--Light-royal-blue) 100%);
+    color: var(--Pale-blue);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section.score p, section.score h6{
+    font-size: 14px;
+    color: var(--Light-lavender);
+}
+
+h5.highlight{
+    font-weight: 700;
+    font-size: 22px;
+}
+
+section.score div.score{
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(var(--Violet-blue) 0%, var(--Persian-blue) 100%);
+    min-height: 50%;
+    border-radius: 50%;
+    margin: 2svh 0rem;
+}
+
+section.score div.score p{
+    color: hsla(241, 100%, 89%, 0.6);
+}
+
+
+section.score div.score h4{
+    font-size: 46px;
+}
+
+
+section.result{
+    --padding: 6svw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: calc(100% - var(--padding) * 2);
+    flex-grow: 1;
+    padding: var(--padding);
+}
+
+section.result button{
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    color: var(--White);
+    background-color: var(--Dark-gray-blue);
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 5rem;
+    border: none;
+    cursor: pointer;
+}
+
+section.result button:hover, section.result button:focus, section.result button:active{
+    background: linear-gradient(var(--Light-slate-blue) 0%, var(--Light-royal-blue) 100%);
+}
+
+section.result article{
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: calc(6svh - 1rem);
+    width: calc(100% - 1rem);
+    border-radius: 0.5rem;
+    background-color: hsla(0, 100%, 67%, 0.2);
+    padding: 0.5rem;
+}
+
+section.result article img{
+    aspect-ratio: 1/1;
+    height: 80%;
+    margin-right: 5svw;
+}
+
+section.result article h5{
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--Light-red);
+}
+
+section.result article p{
+    position: absolute;
+    color: hsla(224, 30%, 27%, 0.4);
+    font-size: 14px;
+    font-weight: 800;
+    right: 0.5rem;
+}
+
+
+section.result article p span{
+    color: var(--Dark-gray-blue);
+    font-size: 15px;
+}
+
+section.result article:nth-of-type(2){
+    background-color: hsla(39, 100%, 56%, 0.2);
+}
+
+section.result article:nth-of-type(2) h5{
+    color: var(--Orangey-yellow);
+}
+
+section.result article:nth-of-type(3){
+    background-color: hsla(166, 100%, 37%, 0.2);
+}
+
+section.result article:nth-of-type(3) h5{
+    color: var(--Green-teal);
+}
+
+section.result article:nth-of-type(4){
+    background-color: hsla(234, 85%, 45%, 0.2);
+}
+
+section.result article:nth-of-type(4) h5{
+    color: var(--Cobalt-blue);
+}
+
+
+@media (min-width: 768px){
+    main{
+        aspect-ratio: 4/3;
+        max-width: 60svw;
+        max-height: 45svw;
+        flex-direction: row;
+        border-radius: var(--border-radius);
+        box-shadow: hsla(0, 0%, 0%, 0.2) 0rem 1rem 5rem 1rem;
+    }
+
+    body{
+        width: 100svw;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+    }
+
+    section.score{
+        border-radius: var(--border-radius);
+        height: calc(100% - var(--border-radius) * 2);
+        justify-content: space-around;
+    }
+
+    section.score h5{
+        margin-bottom: -15%;
+    }
+
+    section.score div.score{
+        min-height: 40%;
+    }
+
+    section.result{
+        --padding: 2%;
+    }
+
+}
+
